@@ -1,13 +1,25 @@
 from django.db import models
-
 from django.utils import timezone
+
+from .category import Category
 
 
 class Project(models.Model):
-    title = models.CharField(max_length=100, verbose_name="Title")
+    title = models.CharField(
+        max_length = 100, 
+        verbose_name = "Title"
+    )
     description = models.TextField(verbose_name="Description")
     pub_date = models.DateTimeField()
-    featured_image = models.ImageField(null=True, verbose_name="Image")
+    featured_image = models.ImageField(
+        null = True, 
+        verbose_name = "Image"
+    )
+    category = models.ForeignKey(
+        Category, 
+        on_delete = models.CASCADE,
+        null = True
+    )
 
 
     class Meta:
