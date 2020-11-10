@@ -148,7 +148,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .fh5co-nav ul li a {
   position: relative;
-  font-size: 13px;
+  font-size: 15px;
   padding: 30px 12px;
   color: rgba(0, 0, 0, 0.3);
   -webkit-transition: 0.5s;
