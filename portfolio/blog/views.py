@@ -8,3 +8,4 @@ class ArticlesPage(ListView):
     template_name = 'blog.html'
     model = Article
     context_object_name = 'articles'
+

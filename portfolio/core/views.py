@@ -16,18 +16,32 @@ class HomePage(TemplateView):
         context = super().get_context_data(*args, **kwargs)
         context = {
             'articles' : Article.objects.all()[:3],
+            'highlighted_article': Article.objects.order_by('view_count').last(),
             'projects' : Project.objects.all()
         }
 
         return context
 
 
+
 class AboutUsPage(TemplateView):
     template_name = 'about.html'
-    
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['articles'] = Article.objects.all()[:5]
+
+        return context
+
     
 
 class ContactPage(CreateView):
     form_class = ContactForm
     template_name = 'contact.html'
-    success_url = '/projects/'
+    success_url = '/'
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['articles'] = Article.objects.all()[:5]
+
+        return context

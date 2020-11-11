@@ -4,15 +4,6 @@
 {% block pages %}
 	<li class="active"><a href="{% url 'home-page' %}" style="margin-left: 31rem">Home</a></li>
 	<li><a href="{% url 'projects-page' %}">Projects</a></li> 
-	<li class="has-dropdown">
-		<a href="{% url 'articles-page' %}">Blog</a>
-		<ul class="dropdown">
-			<li><a href="#">Web Design</a></li>
-			<li><a href="#">eCommerce</a></li>
-			<li><a href="#">Branding</a></li>
-			<li><a href="#">API</a></li>
-		</ul>
-	</li>
 	<li><a href="{% url 'about-page' %}">About</a></li>
 	<li><a href="{% url 'contact-page' %}">Contact</a></li>
 {% endblock %}
@@ -22,21 +13,21 @@
 		<aside id="fh5co-hero">
 			<div class="flexslider">
 				<ul class="slides">
-			   	<li style="background-image: url(images/img_bg_1.jpg);">
+			   	<li style="background-image: url('{% static 'images/img_bg_1.jpg' %}');">
 			   		<div class="overlay-gradient"></div>
 			   		<div class="container-fluid">
 			   			<div class="row">
 				   			<div class="col-md-6 col-md-offset-3 col-md-pull-3 slider-text">
 				   				<div class="slider-text-inner">
 				   					<h1>Not Every Project Needs To Be Perfect</h1>
-										<h2>Free html5 templates Made by <a href="http://freehtml5.co/" target="_blank">freehtml5.co</a></h2>
+										<h2></h2>
 										<p><a class="btn btn-primary btn-demo" href="#"></i> View Demo</a> <a class="btn btn-primary btn-learn">Learn More</a></p>
 				   				</div>
 				   			</div>
 				   		</div>
 			   		</div>
 			   	</li>
-			   	<li style="background-image: url(images/img_bg_4.jpg);">
+			   	<li style="background-image: url('{% static 'images/img_bg_4.jpg' %}');">
 			   		<div class="overlay-gradient"></div>
 			   		<div class="container-fluid">
 			   			<div class="row">
@@ -44,7 +35,7 @@
 				   				<div class="slider-text-inner">
 				   					<h1>I Love to Tell My Story</h1>
 										<h2>Free html5 templates Made by <a href="http://freehtml5.co/" target="_blank">freehtml5.co</a></h2>
-										<p><a class="btn btn-primary btn-demo" href="#"></i> View Demo</a> <a class="btn btn-primary btn-learn">Learn More</a></p>
+										<p><a class="btn btn-primary btn-demo" href="{% url 'about-page' %}"></i> About Me</a> <a class="btn btn-primary btn-learn" href="{% url 'contact-page' %}">Contact with me</a></p>
 				   				</div>
 				   			</div>
 				   		</div>
@@ -143,12 +134,12 @@
 		</div>
 
 		<div id="fh5co-blog" class="blog-flex">
-			<div class="featured-blog" style="background-image: url(images/blog-1.jpg);">
+			<div class="featured-blog" style="background-image: url('{% static 'images/blog-1.jpg' %}');">
 				<div class="desc-t">
 					<div class="desc-tc">
 						<span class="featured-head">Featured Posts</span>
-						<h3><a href="#">Top 20 Best WordPress Themes 2017 Multi Purpose and Creative Websites</a></h3>
-						<span><a href="#" class="read-button">Learn More</a></span>
+						<h3><a href="#">{{ highlighted_article.title }}</a></h3>
+						<span><a href="#" class="read-button">Read more</a></span>
 					</div>
 				</div>
 			</div>

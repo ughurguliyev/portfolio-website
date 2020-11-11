@@ -4,15 +4,6 @@
 {% block pages %}
 	<li><a href="{% url 'home-page' %}" style="margin-left: 31rem">Home</a></li>
 	<li><a href="{% url 'projects-page' %}">Projects</a></li> 
-	<li class="has-dropdown">
-		<a href="{% url 'articles-page' %}">Blog</a>
-		<ul class="dropdown">
-			<li><a href="#">Web Design</a></li>
-			<li><a href="#">eCommerce</a></li>
-			<li><a href="#">Branding</a></li>
-			<li><a href="#">API</a></li>
-		</ul>
-	</li>
 	<li><a href="{% url 'about-page' %}">About</a></li>
 	<li class="active"><a href="{% url 'contact-page' %}">Contact</a></li>
 {% endblock %}
