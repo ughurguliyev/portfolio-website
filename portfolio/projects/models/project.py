@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from autoslug import AutoSlugField
 
 from .category import Category
 
@@ -20,6 +21,7 @@ class Project(models.Model):
         on_delete = models.CASCADE,
         null = True
     )
+    slug = AutoSlugField(populate_from='title', null=True)
 
 
     class Meta:

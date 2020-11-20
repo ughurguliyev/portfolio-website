@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
-from django.views.generic import CreateView, TemplateView
+from django.views.generic import CreateView, TemplateView, DetailView
 
 from .forms import ContactForm
 from blog.models import Article
@@ -33,7 +33,7 @@ class AboutUsPage(TemplateView):
 
         return context
 
-    
+
 
 class ContactPage(CreateView):
     form_class = ContactForm

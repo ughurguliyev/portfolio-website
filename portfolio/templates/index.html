@@ -92,7 +92,7 @@
 			<div class="row">
 				{% for project in projects %}
 				<div class="col-md-4 text-center animate-box">
-					<a href="work-single.html" class="work"  style="background-image: url('{{ project.featured_image.url }}');">
+					<a href="{% url 'project-detail-page' project.slug %}" class="work"  style="background-image: url('{{ project.featured_image.url }}');">
 						<div class="desc">
 							<h3>{{ project.title }}</h3>
 							<span>{{ project.category }}</span>

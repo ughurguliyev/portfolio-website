@@ -15,7 +15,7 @@ SECRET_KEY = '9nj2ji+z5!1_v&z+&ftvc4f6#a97h-@5a)8oz1877kn&!^!!q$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'projects',
     'blog',
     'core',
+    'users'
 ]
 
 MIDDLEWARE = [
@@ -72,6 +73,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
 
 
 # Password validation
@@ -119,3 +121,6 @@ STATICFILES_DIRS = (
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+# User Model
+AUTH_USER_MODEL = "users.User"
